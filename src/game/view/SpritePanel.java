@@ -19,6 +19,13 @@ public class SpritePanel extends JPanel
 	private Color currentColor;
 	private BufferedImage currentCanvas;
 	private BufferedImage stamp;
+	private int dx;
+	private int dy;
+	private int x = 40;
+	private int y = 60;
+	private int width;
+	private int height;
+	private Image image;
 	
 	public SpritePanel(Controller app)
 	{
@@ -30,6 +37,7 @@ public class SpritePanel extends JPanel
 		
 		setupPanel();
 		updateImage();
+		loadImage();
 	}
 	
 	public void setupPanel()
@@ -43,5 +51,14 @@ public class SpritePanel extends JPanel
 	{
 		Graphics2D drawingGraphics = currentCanvas.createGraphics();
 
+	}
+	
+	private void loadImage()
+	{
+		ImageIcon staySpike = new ImageIcon("scr/resources/spike1.png");
+		image = staySpike.getImage();
+		
+		width = image.getWidth(null);
+		height = image.getHeight(null);
 	}
 }
