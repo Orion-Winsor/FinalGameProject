@@ -33,4 +33,85 @@ public class Sprites
 		x += moveXAxis;
 		y += moveYAxis;
 	}
+	
+	public int getX()
+	{
+		return x;
+	}
+	
+	public int getY()
+	{
+		return y;
+	}
+	
+	public int getWidth()
+	{
+		return width;
+	}
+	
+	public int getHeight()
+	{
+		return height;
+	}
+	
+	public Image getImage()
+	{
+		return image;
+	}
+	
+	public void keyPressed(KeyEvent e)
+	{
+		int key = e.getKeyCode();
+		
+		if (key == KeyEvent.VK_LEFT)
+		{
+			moveXAxis = -2;
+		}
+		else if (key == KeyEvent.VK_RIGHT) 
+		{
+			moveXAxis = 2;
+		}
+		else
+		{
+			moveXAxis = 0;
+		}
+		
+		if (key == KeyEvent.VK_UP) 
+		{
+			moveYAxis = -2;
+		}
+		else if (key == KeyEvent.VK_DOWN)
+		{
+			moveYAxis = 2;
+		}
+		else
+		{
+			moveYAxis = 0;
+		}
+	}
+	
+	public void keyRealeased(KeyEvent e)
+	{
+		int key = e.getKeyCode();
+		
+		if (key == KeyEvent.VK_LEFT)
+		{
+			moveXAxis = 0;
+		}
+		
+		if(key == KeyEvent.VK_RIGHT)
+		{
+			moveXAxis = 0;
+		}
+		
+		if(key == KeyEvent.VK_UP)
+		{
+			moveYAxis = 0;
+		}
+		
+		if(key == KeyEvent.VK_DOWN)
+		{
+			moveYAxis = 0;
+		}
+	}
 }
