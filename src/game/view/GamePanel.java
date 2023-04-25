@@ -11,14 +11,14 @@ public class GamePanel extends JPanel
 	private Controller app;
 	private SpringLayout layout;
 	private JLabel demoLabel;
-	private SpritePanel canvas;
+	//private SpritePanel canvas;
 	
 	public GamePanel(Controller app)
 	{
 		super();
 		
 		this.app = app;
-		this.canvas = new SpritePanel(app);
+		//this.canvas = new SpritePanel(app);
 		this.layout = new SpringLayout();
 		this.demoLabel = new JLabel("Placeholdertext");
 		
