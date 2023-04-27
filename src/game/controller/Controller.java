@@ -2,14 +2,26 @@ package game.controller;
 
 import javax.swing.JOptionPane;
 import game.view.GameFrame;
+import game.view.Mechanisms;
 
-public class Controller 
+import java.awt.EventQueue;
+
+import javax.swing.*;
+
+public class Controller extends JFrame
 {
 	private GameFrame frame;
 	
 	public Controller()
 	{	
 		this.frame = new GameFrame(this);
+		
+		EventQueue.invokeLater(() ->
+		{
+			Controller ex = new Controller();
+			ex.setVisible(true);
+		});
+			
 		
 	}
 	
@@ -27,4 +39,22 @@ public class Controller
 	{
 		
 	}
+
+	private void intitUI()
+	{
+		add (new Mechanisms());
+		
+		setTitle("Moving sprite");
+		setSize(400, 300);
+		
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void MovingSpriteEx()
+	{
+		intitUI();
+	}
+
 }
