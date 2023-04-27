@@ -36,10 +36,21 @@ public class GamePanel extends JPanel
 		setupPanel();
 	}
 	
+	public void paintComponent(Graphics graphics)
+	{
+		super.paintComponent(graphics);
+		graphics.setColor(Color.RED);
+		//graphics.fillOval(x,  y,  width, height);
+	}
 	
 	private void setupPanel()
 	{
 		this.setPreferredSize(new Dimension(700, 700));
 		this.setBackground(Color.GREEN);
+	}
+	
+	private void placeSprite()
+	{
+		
 	}
 }

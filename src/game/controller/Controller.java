@@ -10,6 +10,7 @@ public class Controller
 	public Controller()
 	{	
 		this.frame = new GameFrame(this);
+		
 	}
 	
 	public void start()
@@ -20,5 +21,10 @@ public class Controller
 	public void handleError(Exception error)
 	{
 		JOptionPane.showMessageDialog(frame, error.getMessage(), "Ooops!", JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public void updateDisplay()
+	{
+		
 	}
 }
