@@ -14,7 +14,7 @@ import javax.swing.Timer;
 public class Mechanisms extends JPanel implements ActionListener
 {
 	private Timer timer;
-	private Sprites spike;
+	private Sprites ball;
 	private final int DELAY = 10;
 	
 	public Mechanisms()
@@ -28,7 +28,7 @@ public class Mechanisms extends JPanel implements ActionListener
 		setBackground(Color.black);
 		setFocusable(true);
 		
-		spike = new Sprites();
+		ball = new Sprites();
 		
 		timer = new Timer(DELAY, this);
 		timer.start();
@@ -48,7 +48,7 @@ public class Mechanisms extends JPanel implements ActionListener
 	{
 		Graphics2D g2d = (Graphics2D) g;
 		
-		g2d.drawImage(spike.getImage(), spike.getX(), spike.getY(), this);
+		g2d.drawImage(ball.getImage(), ball.getX(), ball.getY(), this);
 	}
 	
 	@Override
@@ -59,9 +59,9 @@ public class Mechanisms extends JPanel implements ActionListener
 	
 	private void step()
 	{
-		spike.move();
+		ball.move();
 		
-		repaint(spike.getX()-1, spike.getY()-1, spike.getWidth()+2, spike.getHeight() +2);
+		repaint(ball.getX()-1, ball.getY()-1, ball.getWidth()+2, ball.getHeight() +2);
 	}
 	
 	private class TAdapter extends KeyAdapter
@@ -69,7 +69,7 @@ public class Mechanisms extends JPanel implements ActionListener
 		@Override
 		public void keyReleased(KeyEvent e) 
 		{
-			spike.keyPressed(e);
+			ball.keyPressed(e);
 		}
 	}
 }

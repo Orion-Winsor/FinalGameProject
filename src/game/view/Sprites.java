@@ -21,7 +21,7 @@ public class Sprites
 	
 	private void loadImage()
 	{
-		ImageIcon icon = new ImageIcon("src/resources/spike1.png");
+		ImageIcon icon = new ImageIcon("src/resources/Ball.png");
 		image = icon.getImage();
 		
 		width = image.getWidth(null);

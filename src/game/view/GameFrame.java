@@ -3,6 +3,7 @@ package game.view;
 import game.controller.*;
 
 import java.awt.CardLayout;
+import java.awt.*;
 
 import javax.swing.*;
 
@@ -27,6 +28,9 @@ public class GameFrame extends JFrame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setTitle("Come Up With Game Name");
+		
+		
+		
 		
 		replaceScreen("START");
 		
