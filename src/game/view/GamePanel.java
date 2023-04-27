@@ -2,9 +2,13 @@ package game.view;
 
 import game.controller.Controller;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import java.awt.*;
+import java.awt.Image;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import java.awt.event.*;
 
@@ -13,6 +17,20 @@ public class GamePanel extends JPanel
 	private Controller app;
 	private SpringLayout layout;
 	private JLabel demoLabel;
+	Ball ball = new Ball(this);
+	Raquet racquet = new raquet(this);
+	
+	public Game()
+	{
+		addKeyListener(new KeyListener()
+		{
+			@Override
+			public void keyTyped(KeyEvent e)
+			{
+				
+			}
+		}
+	}
 	//private SpritePanel canvas;
 	
 	public GamePanel(Controller app)
@@ -32,6 +50,8 @@ public class GamePanel extends JPanel
 		frame.getContentPane().add(emptyLabel, BorderLayout.PAGE_START);
 		frame.pack();
 		frame.setVisible(true);
+		
+		
 		
 		setupPanel();
 	}

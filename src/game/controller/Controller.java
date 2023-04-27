@@ -2,7 +2,7 @@ package game.controller;
 
 import javax.swing.JOptionPane;
 import game.view.GameFrame;
-import game.view.Mechanisms;
+import game.view.Mechanisms; 
 
 import java.awt.EventQueue;
 
@@ -15,14 +15,8 @@ public class Controller extends JFrame
 	public Controller()
 	{	
 		this.frame = new GameFrame(this);
-		
-		EventQueue.invokeLater(() ->
-		{
-			Controller ex = new Controller();
-			ex.setVisible(true);
-		});
 			
-		
+	
 	}
 	
 	public void start()
