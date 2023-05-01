@@ -56,6 +56,7 @@ public class Ball
 		y = y + ya;
 	}
 
+	
 	private boolean collision()
 	{
 		return controller.racquet.getBounds().intersects(getBounds());
