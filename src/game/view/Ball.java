@@ -1,8 +1,10 @@
 package game.view;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import game.view.Racquet;
+import java.awt.*;
+import java.util.*;
 
 import game.controller.Controller;
 
@@ -15,11 +17,13 @@ public class Ball
 	int ya = 1;
 	private Controller controller;
 
-	public Ball(Controller controller) {
+	public Ball(Controller controller) 
+	{
 		this.controller= controller;
 	}
 
-	public void move() {
+	public void move() 
+	{
 		if (x + xa < 0)
 			xa = 1;
 		if (x + xa > controller.getWidth() - DIAMETER)
@@ -42,11 +46,15 @@ public class Ball
 		return controller.racquet.getBounds().intersects(getBounds());
 	}
 	
-	public void paint(Graphics2D g) {
+	public void paint(Graphics2D g) 
+	{
 		g.fillOval(x, y, DIAMETER, DIAMETER);
+		
+		//g.setColor(new Color(212, 212, 212));
 	}
 	
-	public Rectangle getBounds() {
+	public Rectangle getBounds() 
+	{
 		return new Rectangle(x, y, DIAMETER, DIAMETER);
 	}
 }

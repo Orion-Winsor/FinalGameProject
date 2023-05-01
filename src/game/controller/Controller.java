@@ -8,8 +8,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import game.view.Ball;
-import game.view.Racquet;
+import game.view.*;
 
 public class Controller extends JPanel
 {
@@ -22,32 +21,40 @@ public class Controller extends JPanel
 	
 	public Racquet racquet = new Racquet(this);
 
-	public Controller() {
-		addKeyListener(new KeyListener() {
+	public Controller() 
+	{
+		addKeyListener(new KeyListener() 
+		{
 			@Override
-			public void keyTyped(KeyEvent e) {
+			public void keyTyped(KeyEvent e) 
+			{
+				
 			}
 
 			@Override
-			public void keyReleased(KeyEvent e) {
+			public void keyReleased(KeyEvent e) 
+			{
 				racquet.keyReleased(e);
 			}
 
 			@Override
-			public void keyPressed(KeyEvent e) {
+			public void keyPressed(KeyEvent e) 
+			{
 				racquet.keyPressed(e);
 			}
 		});
 		setFocusable(true);
 	}
 	
-	public void move() {
+	public void move() 
+	{
 		ball.move();
 		racquet.move();
 	}
 
 	@Override
-	public void paint(Graphics g) {
+	public void paint(Graphics g) 
+	{
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -62,7 +69,8 @@ public class Controller extends JPanel
 		System.exit(ABORT);
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException 
+	{
 		JFrame frame = new JFrame("Mini Tennis");
 		Controller controller = new Controller();
 		frame.add(controller);
@@ -70,7 +78,8 @@ public class Controller extends JPanel
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		while (true) {
+		while (true) 
+		{
 			controller.move();
 			controller.repaint();
 			Thread.sleep(10);
