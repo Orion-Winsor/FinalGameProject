@@ -20,7 +20,13 @@ public class Controller extends JPanel
 	Ball ball = new Ball(this);
 	
 	public Racquet racquet = new Racquet(this);
+	public int speed = 1;
 
+	private int getScore()
+	{
+		return speed -1;
+	}
+	
 	public Controller() 
 	{
 		addKeyListener(new KeyListener() 
@@ -65,13 +71,13 @@ public class Controller extends JPanel
 	
 	public void gameOver()
 	{
-		JOptionPane.showMessageDialog(this,  "Game Over", "Game Over", JOptionPane.YES_NO_OPTION);
+		JOptionPane.showMessageDialog(this,  "Game Over\n Your Score: " + getScore(), "Game Over", JOptionPane.YES_NO_OPTION);
 		System.exit(ABORT);
 	}
 
 	public static void main(String[] args) throws InterruptedException 
 	{
-		JFrame frame = new JFrame("Mini Tennis");
+		JFrame frame = new JFrame("One Player Pong");
 		Controller controller = new Controller();
 		frame.add(controller);
 		frame.setSize(300, 400);

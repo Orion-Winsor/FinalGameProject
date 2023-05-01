@@ -24,17 +24,32 @@ public class Ball
 
 	public void move() 
 	{
+		boolean changeDirection = true;
 		if (x + xa < 0)
-			xa = 1;
-		if (x + xa > controller.getWidth() - DIAMETER)
-			xa = -1;
-		if (y + ya < 0)
-			ya = 1;
-		if (y + ya > controller.getHeight() - DIAMETER)
-			ya = -1;
-		if (collision()){
-			ya = -1;
+		{
+			xa = controller.speed;
+		}
+		else if (x + xa > controller.getWidth() - DIAMETER)
+		{
+			xa = -controller.speed;
+		}
+		else if (y + ya < 0)
+		{
+			ya = controller.speed;
+		}
+		else if (y + ya > controller.getHeight() - DIAMETER)
+		{
+			controller.gameOver();
+		}
+		else if (collision())
+		{
+			ya = -controller.speed;
 			y = controller.racquet.getTopY() - DIAMETER;
+			controller.speed++;
+		}
+		else
+		{
+			changeDirection = false;
 		}
 
 		x = x + xa;
@@ -50,7 +65,7 @@ public class Ball
 	{
 		g.fillOval(x, y, DIAMETER, DIAMETER);
 		
-		//g.setColor(new Color(212, 212, 212));
+		g.setColor(new Color(212, 212, 212));
 	}
 	
 	public Rectangle getBounds() 
