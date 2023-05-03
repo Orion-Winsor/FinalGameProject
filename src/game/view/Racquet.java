@@ -1,5 +1,6 @@
 package game.view;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -22,13 +23,15 @@ public class Racquet
 
 	public void move() 
 	{
-		if (x + xa > 0 && x + xa < game.getWidth()-60)
+		if (x + xa > 0 && x + xa < game.getWidth() - 60)
 			x = x + xa;
 	}
 
 	public void paint(Graphics2D g) 
 	{
 		g.fillRect(x, y, width, height);
+		
+		g.setColor(Color.BLUE);
 	}
 
 	public void keyReleased(KeyEvent e) 

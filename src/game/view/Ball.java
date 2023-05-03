@@ -66,7 +66,7 @@ public class Ball
 	{
 		g.fillOval(x, y, DIAMETER, DIAMETER);
 		
-		g.setColor(new Color(212, 212, 212));
+		g.setColor(Color.BLACK);
 	}
 	
 	public Rectangle getBounds() 
