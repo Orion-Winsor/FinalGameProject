@@ -31,7 +31,7 @@ public class Racquet
 	{
 		g.fillRect(x, y, width, height);
 		
-		g.setColor(Color.BLUE);
+		g.setColor(new Color(115, 115, 155));
 	}
 
 	public void keyReleased(KeyEvent e) 
